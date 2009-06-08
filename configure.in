@@ -1,0 +1,70 @@
+dnl configure.in source file; run autoconf to create configure script
+
+AC_REVISION($Revision: 1.2 $)dnl this revision of this configure.in
+AC_PREREQ(2.13)
+
+AC_INIT(OSDTK_Base,1.0.2,jshiffer@zerotao.org)
+AC_CONFIG_HEADERS([config.h])
+
+AC_CONFIG_SRCDIR(src/Makefile.am)
+AC_CONFIG_AUX_DIR(aux)
+
+AC_CANONICAL_SYSTEM
+
+dnl AM_INIT_AUTOMAKE([foreign])
+AM_INIT_AUTOMAKE
+
+AC_PROG_CC
+
+dnl Add -Wall if gcc
+if test "$GCC" = "yes"; then
+   CFLAGS="-Wall"
+fi
+
+AC_PROG_INSTALL
+AC_PROG_MAKE_SET
+AC_PROG_CPP
+
+AM_MAINTAINER_MODE
+dnl AM_DISABLE_STATIC
+AM_PROG_LIBTOOL
+
+dnl Checks for libraries.
+dnl Replace `main' with a function in -lpcap:
+dnl AC_CHECK_LIB(foo, foo_init)
+
+dnl Checks for header files.
+dnl AC_HEADER_STDC
+dnl AC_CHECK_HEADERS(fcntl.h sys/ioctl.h syslog.h unistd.h)
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+dnl AC_C_CONST
+dnl AC_TYPE_PID_T
+
+dnl Checks for library functions.
+dnl AC_PROG_GCC_TRADITIONAL
+dnl AC_TYPE_SIGNAL
+dnl AC_FUNC_VPRINTF
+dnl AC_CHECK_FUNCS(socket strdup strerror uname)
+
+AC_MSG_CHECKING(for dyld)
+case "$host_os" in
+     darwin*)
+		AC_MSG_RESULT(always on for Darwin)
+		AC_DEFINE(WITH_DYLD, [], [darwin dynamic loader])
+		;;
+	   *)
+		AC_MSG_RESULT(no)
+		;;
+esac
+
+AC_WITH_DEBUG
+AC_WITH_PROFILING
+
+AC_OUTPUT(
+Makefile
+src/Makefile
+project.spec
+)
+
+

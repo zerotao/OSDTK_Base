@@ -1,0 +1,56 @@
+2000-09-07  Jason L. Shiffer  <jshiffer@zerotao.com>
+
+	*  (buid-rpm): fixed a bug that prevented building rpms
+	*  (Makefile.am): added support for make rpm and make Manifest
+	   fixed a bug in maintainer-clean
+
+2000-08-19  Jason L. Shiffer  <jshiffer@zerotao.com>
+
+	*  Makefile.am.dist: Added the missing file
+	*  cleanup.sed: Added the missing file
+
+2000-03-12  Jason L. Shiffer  <jshiffer@zerotao.com>
+
+	* Makefile.am: Added EXTRA_DIST from the extra scripts that need to
+	be distributed Added dest-hook to clean out the stuff that Base
+	does not need as they are for a more standard project
+
+	* Makefile.extra: MAINTAINERCLEANFILES now only references
+	Makefile.in
+
+	* prep.sh: Added a sed script to cleanup all of the extra OSDTK
+	stuff
+
+	* README: minor updates
+
+	* configure.in: changed the version number
+
+2000-03-11  Jason L. Shiffer  <jshiffer@zerotao.com>
+
+	* AUTHORS, ChangeLog, Makefile.am, Makefile.extra, NEWS, README,
+	acconfig.h, acinclude.m4, autogen.sh, build-rpm, configure.in,
+	prep.sh, project.spec.in, src/Makefile.am, src/Makefile.in,
+	src/foo.c, src/foo.h, src/main.c, src/main.h: Initial revision
+
+	* autogen.sh, src/Makefile.in: added a test to create aux if it
+	does not exist
+
+	* src/: Makefile.am, Makefile.in: We do not want to keep
+	Makefile.in's in CVS
+
+	* prep.sh: Added a sed command to strip OSDTK_Base out of
+	configure.in and change it to project
+
+	* configure.in: changed the project name to OSDTK_Base rather then
+	project
+
+	* Makefile.extra: Removed the references to the files in aux We
+	will leave these for people to clean up on their own
+
+	* README, prep.sh: updated README to reflect warnings/errors that
+	show up when you execute autogen.sh updated prep.sh to announce
+	what is going on when run.  Also fixed prep.sh to remove prep.sh
+	rather then prep
+
+	* autogen.sh: fixed the aux test, changed from && to || ;)
+

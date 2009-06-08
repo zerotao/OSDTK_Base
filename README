@@ -1,0 +1,38 @@
+OSDTK Base
+
+run "prep.sh" to setup for your project.  This will remove the
+descriptive files for the OSDTK poject and add ones fo your project.
+These include README AUTHORS NEWS ChangeLog and prep.sh as well as
+cleaning up configure.in, etc.
+
+At this point you have a generic GNU "kickstart/base" package.  
+You will need autoconf, automake, and libtool installed at a minimum.
+
+There are two schools of thought on how to start the development process for configure enviroments.
+
+1) autogen.sh -- which gets everything started and then runs configure for you.
+                 In most cases it might be expected (in development) to run 
+                 autogen.sh rather then configure
+2) bootstrap  -- which just does the setup stuff and expects you to run 
+                 configure.  You will only run bootstrap when you have made 
+                 changes to the setup of your project.
+
+I personally don't care either way so I have provided both for your consumption.  Just remove the one that you do not want.
+
+To get started run "autogen.sh" or "bootstrap && ./configure" runs all of the 
+GNU Tools to set everything up, it will run autoconf, autoheader, aclocal and 
+automake.  As you advance your project you may wish to remove the calls to 
+some of these like autoheader.
+
+When you run autogen.sh you will see the following errors which you
+can safely ignore:
+automake: configure.in: installing `aux/install-sh'
+automake: configure.in: installing `aux/mkinstalldirs'
+automake: configure.in: installing `aux/missing'
+configure.in: 31: required file `aux/ltconfig' not found
+automake: Makefile.am: installing `./INSTALL'
+automake: Makefile.am: installing `./COPYING'
+
+
+
+
