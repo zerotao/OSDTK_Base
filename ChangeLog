@@ -1,3 +1,6 @@
+2010-06-28  Jason L. Shiffer  <jshiffer@zerotao.org>
+    *  (bootstrap): brought up to date with my current usage
+
 2000-09-07  Jason L. Shiffer  <jshiffer@zerotao.com>
 
 	*  (buid-rpm): fixed a bug that prevented building rpms
