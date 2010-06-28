@@ -7,7 +7,7 @@ AC_INIT(OSDTK_Base,1.0.2,jshiffer@zerotao.org)
 AC_CONFIG_HEADERS([config.h])
 
 AC_CONFIG_SRCDIR(src/Makefile.am)
-AC_CONFIG_AUX_DIR(aux)
+AC_CONFIG_AUX_DIR(aux_files)
 
 AC_CANONICAL_SYSTEM
 

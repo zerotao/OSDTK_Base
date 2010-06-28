@@ -21,13 +21,13 @@ MAINTAINERCLEANFILES = \
 	stamp-h.in \
 	config.h.in \
 	Makefile.in \
-	aux/config.guess \
-	aux/config.sub \
-	aux/ltconfig \
-	aux/ltmain.sh \
-	aux/install-sh \
-	aux/mkinstalldirs \
-	aux/missing 
+	aux_files/config.guess \
+	aux_files/config.sub \
+	aux_files/ltconfig \
+	aux_files/ltmain.sh \
+	aux_files/install-sh \
+	aux_files/mkinstalldirs \
+	aux_files/missing 
 
 EXTRA_DIST = \
 	Makefile.extra \
@@ -46,4 +46,4 @@ DISTCLEANFILES =    \
 # 	rm -f $(distdir)/configure
 # 	find $(distdir) -name Makefile.in -exec rm {} \;
 # 	rm -f $(distdir)/stamp-h.in
-# 	mkdir $(distdir)/aux
+# 	mkdir $(distdir)/aux_files

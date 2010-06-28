@@ -60,7 +60,7 @@ fi
 echo Removing extra files
 if [ "$TEST" -ne 1 ]; then
     find . -name Makefile.in -exec rm -f {} \; >& /dev/null
-    rm -f aux/*
+    rm -f aux_files/*
 else
     echo " find . -name Makefile.in -exec rm -f {} \;"
     echo " rm -f aux/*"
